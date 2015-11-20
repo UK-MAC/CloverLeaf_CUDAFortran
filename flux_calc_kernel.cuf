@@ -46,7 +46,7 @@ CONTAINS
     
     INTEGER :: j,k, istat
         
-    !$cuf kernel do(2) <<<*,*,stream=cudaGetStreamDefault()>>>
+    !$cuf kernel do(2) <<<*,*,stream=cudaforGetDefaultStream()>>>
     DO k=y_min,y_max
        DO j=x_min,x_max+1 
           vol_flux_x(j,k)=0.25_8*dt*xarea(j,k)                  &
@@ -54,7 +54,7 @@ CONTAINS
        ENDDO
     ENDDO
     
-    !$cuf kernel do(2) <<<*,*,stream=cudaGetStreamDefault()>>>
+    !$cuf kernel do(2) <<<*,*,stream=cudaforGetDefaultStream()>>>
     DO k=y_min,y_max+1
        DO j=x_min,x_max
           vol_flux_y(j,k)=0.25_8*dt*yarea(j,k)                  &

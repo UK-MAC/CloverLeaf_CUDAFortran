@@ -31,7 +31,7 @@ CONTAINS
     integer :: xmin, xmax, ymin, ymax
     integer :: j, k, istat
     
-    !$cuf kernel do(2) <<<*,*,stream=cudaGetStreamDefault()>>>
+    !$cuf kernel do(2) <<<*,*,stream=cudaforGetDefaultStream()>>>
     DO k=ymin,ymax
        DO j=xmin,xmax
           IF(a(j,k) .LT. dt) dt=a(j,k)
