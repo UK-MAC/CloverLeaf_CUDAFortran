@@ -40,14 +40,14 @@ CONTAINS
     
     INTEGER :: j,k, istat
 
-    !$cuf kernel do(2) <<<*,*,stream=cudaGetStreamDefault()>>>
+    !$cuf kernel do(2) <<<*,*,stream=cudaforGetDefaultStream()>>>
     DO k=y_min,y_max
        DO j=x_min,x_max
           density1(j,k)=density0(j,k)
        ENDDO
     ENDDO
     
-    !$cuf kernel do(2) <<<*,*,stream=cudaGetStreamDefault()>>>
+    !$cuf kernel do(2) <<<*,*,stream=cudaforGetDefaultStream()>>>
     DO k=y_min,y_max
        DO j=x_min,x_max
           energy1(j,k)=energy0(j,k)

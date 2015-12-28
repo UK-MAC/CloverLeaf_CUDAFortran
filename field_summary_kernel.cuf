@@ -53,7 +53,7 @@ CONTAINS
     ke=0.0
     press=0.0
     
-    !$cuf kernel do(2) <<<*,*,stream=cudaGetStreamDefault()>>>
+    !$cuf kernel do(2) <<<*,*,stream=cudaforGetDefaultStream()>>>
     DO k=y_min,y_max
        DO j=x_min,x_max
           vsqrd=0.25*(&
